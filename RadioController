@@ -1,0 +1,39 @@
+package HDT1;
+public class RadioController {
+    private Radio radio;
+
+    public RadioController(Radio radio) {
+        this.radio = radio;
+        
+    }
+
+    // Métodos para manejar eventos y comunicarse con la lógica del radio y la vista
+    public void onPowerButtonClicked() {
+        if (radio.isOn()) {
+            radio.turnOff();
+        } else {
+            radio.turnOn();
+        }
+    }
+
+    public void onBandButtonClicked() {
+        radio.changeBand();
+    }
+
+    public void onTuneUpButtonClicked() {
+        radio.tuneUp();
+    }
+
+    public void onTuneDownButtonClicked() {
+        radio.tuneDown();
+    }
+
+    public void onSaveButtonClicked(int buttonNumber) {
+        radio.savePreset(buttonNumber);
+    }
+
+    public void onSelectButtonClicked(int buttonNumber) {
+        radio.selectPreset(buttonNumber);
+    }
+}
+
