@@ -1,0 +1,68 @@
+package HDT1;
+import java.util.Scanner;
+
+public class RadioMenu {
+    public static void main(String[] args) {
+        // Crear instancia de Radio
+        Radio radio = new Radio();
+
+        // Crear instancia de RadioController
+        RadioController radioController = new RadioController(radio);
+
+        // Configurar el menú y mostrarlo
+        showMenu(radioController);
+    }
+
+    static void showMenu(RadioController radioController) {
+        Scanner scanner = new Scanner(System.in);
+        int choice;
+
+        do {
+            System.out.println("\n--- Menú ---");
+            System.out.println("1. Encender / Apagar el radio");
+            System.out.println("2. Cambiar de AM a FM o viceversa");
+            System.out.println("3. Sintonizar hacia arriba");
+            System.out.println("4. Sintonizar hacia abajo");
+            System.out.println("5. Guardar emisora en un botón");
+            System.out.println("6. Seleccionar emisora de un botón");
+            System.out.println("0. Salir");
+            System.out.print("Ingrese su elección: ");
+
+            choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    radioController.onPowerButtonClicked();
+                    break;
+                case 2:
+                    radioController.onBandButtonClicked();
+                    break;
+                case 3:
+                    radioController.onTuneUpButtonClicked();
+                    break;
+                case 4:
+                    radioController.onTuneDownButtonClicked();
+                    break;
+                case 5:
+                    System.out.print("Ingrese el número del botón (1-12): ");
+                    int saveButton = scanner.nextInt();
+                    radioController.onSaveButtonClicked(saveButton);
+                    break;
+                case 6:
+                    System.out.print("Ingrese el número del botón (1-12): ");
+                    int selectButton = scanner.nextInt();
+                    radioController.onSelectButtonClicked(selectButton);
+                    break;
+                case 0:
+                    System.out.println("Saliendo del programa. ¡Hasta luego!");
+                    break;
+                default:
+                    System.out.println("Opción no válida. Inténtelo de nuevo.");
+                    break;
+            }
+
+        } while (choice != 0);
+
+        scanner.close();
+    }
+}
