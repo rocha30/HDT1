@@ -1,0 +1,54 @@
+package HDT1;
+public class Radio {
+    private boolean isOn;
+    private double frequency;
+    private String band;
+    private double[] presets;
+
+    public Radio() {
+        isOn = false;
+        frequency = 87.9; // Frecuencia inicial para FM
+        band = "FM";
+        presets = new double[12];
+    }
+
+    // Métodos públicos para manipular el estado del radio
+    public void turnOn() {
+        isOn = true;
+        System.out.println("Radio encendido");
+    }
+
+    public void turnOff() {
+        isOn = false;
+        System.out.println("Radio apagado");
+    }
+
+    public void changeBand() {
+        band = (band.equals("AM")) ? "FM" : "AM";
+        System.out.println("Cambiando a banda: " + band);
+    }
+
+    public void tuneUp() {
+        frequency += (band.equals("AM")) ? 10 : 0.2;
+        System.out.println("Sintonizando hacia arriba. Frecuencia actual: " + frequency);
+    }
+
+    public void tuneDown() {
+        frequency -= (band.equals("AM")) ? 10 : 0.2;
+        System.out.println("Sintonizando hacia abajo. Frecuencia actual: " + frequency);
+    }
+
+    public void savePreset(int buttonNumber) {
+        presets[buttonNumber - 1] = frequency;
+        System.out.println("Emisora guardada en el botón " + buttonNumber);
+    }
+
+    public void selectPreset(int buttonNumber) {
+        frequency = presets[buttonNumber - 1];
+        System.out.println("Seleccionando emisora del botón " + buttonNumber + ". Frecuencia actual: " + frequency);
+    }
+
+    public boolean isOn() {
+        return isOn;
+    }
+}
