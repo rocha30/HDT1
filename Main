@@ -1,0 +1,10 @@
+package HDT1;
+public class Main {
+    public static void main(String[] args) {
+        // Crear instancia de Radio
+        
+                RadioController radioController = new RadioController(new Radio());
+                RadioMenu.showMenu(radioController);
+            
+        }
+}
