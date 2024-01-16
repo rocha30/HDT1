@@ -10,7 +10,6 @@ Este proyecto implementa una simulación de un radio con funciones básicas. Pue
 
 ## Estructura del Proyecto
 
-- `src/`: Contiene el código fuente Java del proyecto.
   - `Radio.java`: Clase que implementa la lógica del radio.
   - `RadioController.java`: Clase que controla las acciones del usuario.
   - `RadioMenu.java`: Clase que muestra el menú en la consola.
