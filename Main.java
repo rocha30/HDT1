@@ -7,16 +7,17 @@ package HDT1;
  */
 public class Main {
 
-    /**
+        /**
      * Método principal que inicia la aplicación de control de radio.
      *
      * @param args Argumentos de la línea de comandos (no se utilizan en este caso).
      */
     public static void main(String[] args) {
-        // Crear instancia de RadioController
-        RadioController radioController = new RadioController(new Radio());
+                // Crear instancia de RadioController
+                RadioController radioController = new RadioController(new Radio());
 
-        // Mostrar el menú de radio
-        RadioMenu.showMenu(radioController);
-    }
+                // Mostrar el menú de radio
+                RadioMenu.showMenu(radioController);
+            
+        }
 }

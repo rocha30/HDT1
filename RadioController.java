@@ -6,6 +6,9 @@ package HDT1;
  * operaciones relacionadas con el radio, como encender/apagar, cambiar de banda,
  * sintonizar, guardar y seleccionar emisoras preestablecidas.
  */
+
+import java.util.List;
+
 public class RadioController {
     private Radio radio;  // Instancia de la clase Radio que se está controlando
 
@@ -16,6 +19,7 @@ public class RadioController {
      */
     public RadioController(Radio radio) {
         this.radio = radio;
+        
     }
 
     /**
@@ -30,7 +34,7 @@ public class RadioController {
         }
     }
 
-    /**
+     /**
      * Maneja el evento de clic en el botón de cambio de banda y realiza la
      * acción correspondiente en la lógica del radio.
      */
@@ -73,5 +77,26 @@ public class RadioController {
     public void onSelectButtonClicked(int buttonNumber) {
         radio.selectPreset(buttonNumber);
     }
+
+    /**
+     * regresa los estados de las variables
+     *
+     * son los getters de las variables
+     */
+    public String getSignal() {
+        return radio.getBand();
+    }
+
+    public Double getFrequency(){
+        return radio.getFrequency();
+    }
+
+    public List<Double> getPresets() {
+        return presets;
+    }
+
+    public boolean isPresetsFull() {
+        return presets.stream().allMatch(emisora -> emisora != null);
+    }    
 }
 
