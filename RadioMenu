@@ -1,7 +1,19 @@
 package HDT1;
+
 import java.util.Scanner;
 
+/**
+ * La clase RadioMenu es responsable de mostrar el menú interactivo para controlar
+ * las funciones del radio y gestionar las interacciones del usuario.
+ */
 public class RadioMenu {
+
+    /**
+     * Método principal que inicia el menú interactivo para controlar el radio.
+     * Crea instancias de la clase Radio y RadioController, luego muestra y gestiona el menú.
+     *
+     * @param args Argumentos de la línea de comandos (no se utilizan en este caso).
+     */
     public static void main(String[] args) {
         // Crear instancia de Radio
         Radio radio = new Radio();
@@ -13,6 +25,11 @@ public class RadioMenu {
         showMenu(radioController);
     }
 
+    /**
+     * Muestra el menú interactivo y gestiona las interacciones del usuario.
+     *
+     * @param radioController Instancia de RadioController para manejar las acciones del usuario.
+     */
     static void showMenu(RadioController radioController) {
         Scanner scanner = new Scanner(System.in);
         int choice;
